@@ -56,7 +56,7 @@ class Model:
         str
             The current player ('X' or 'O').
         """
-        return self.player
+        return self.board.getPlayer
 
     def change_player(self) -> None:
         """
@@ -66,12 +66,15 @@ class Model:
             self.player = 'O'
         elif self.player == 'O':
             self.player = 'X'
+            
+        self.board.setPlayer
+        
 
     def set_winner(self) -> None:
         """
         Checks for a winner and sets the winner attribute if there is one.
         """
-        self.winner = self.board.check_winner()
+        self.winner = self.board.winner
 
     def get_winner(self) -> Optional[str]:
         """

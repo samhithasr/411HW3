@@ -62,10 +62,10 @@ def validate_index(index: str) -> int:
         
         idx = int(index)
         if idx < 0 or idx >= Board.SIZE:
-            raise ValueError(f"Index {idx} is out of bounds.")
+            raise ValueError(INVALID_MOVE_ERROR_MSG)
         return idx
     except ValueError:
-        raise ValueError(f"Invalid index {index}.")
+        raise ValueError(INVALID_MOVE_ERROR_MSG)
 
 def make_move(index: str) -> Response:
     """
